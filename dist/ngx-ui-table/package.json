@@ -1,10 +1,31 @@
 {
   "name": "ngx-ui-table",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
   },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "angular 4",
+    "angular 5",
+    "angular 6",
+    "angular 7",
+    "ngx-table",
+    "ngx-table-ui",
+    "no bootstap table"
+  ],
+  "author": {
+    "name": "Dudi Partush",
+    "email": "dudipsh@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudipsh/ngx-ui-table"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/dudipsh/ngx-ui-table",
   "main": "bundles/ngx-ui-table.umd.js",
   "module": "fesm5/ngx-ui-table.js",
   "es2015": "fesm2015/ngx-ui-table.js",

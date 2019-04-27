@@ -17,12 +17,11 @@ Handle large data sets ( Virtual Scroll )
 
 ## Using
 ### app.module
-`
+```typescript
 imports: [...,
-    VirtualScrollerModule,
     NgxUiTableModule
   ],
-`
+```
 ### app.component.html
 
 ```html 
@@ -37,28 +36,26 @@ imports: [...,
 ### app.component.ts
 ##### basic
 ```typescript
-columns: NgxUiColumn[];
-this.columns = [
-      {
-        field: 'id',
-        name: 'id',
-        size: 'tbl-sm',
-        sort: 'desc'
-      },
-      {
-        field: 'isActive',
-        name: 'isActive',
-        size: 'tbl-sm',
-        hide: false
-      },
-      {
-        field: 'name',
-        name: 'Name',
-        size: 'tbl-lg'
-      }
-    ];
-this.tableData = [
-      {
+      columns: NgxUiColumn[];
+      this.columns = [{
+              field: 'id',
+              name: 'id',
+              className: 'tbl-sm',
+              sort: 'desc'
+            },
+            {
+              field: 'isActive',
+              name: 'isActive',
+              className: 'myGlobalClass',
+              hide: false
+            },
+            {
+              field: 'name',
+              name: 'Name',
+              className: 'tbl-lg'
+            }
+      ];
+      this.tableData = [{
         'id': 100,
         'name': 'john doe01',
         'image': 'https://picsum.photos/200/300?random=01',
@@ -71,63 +68,7 @@ this.tableData = [
         'image': 'https://picsum.photos/200/300?random=11',
         'isActive': false,
         'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 102,
-        'name': 'john doe21',
-        'image': 'https://picsum.photos/200/300?random=21',
-        'isActive': true,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 103,
-        'name': 'john doe31',
-        'image': 'https://picsum.photos/200/300?random=31',
-        'isActive': false,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 104,
-        'name': 'john doe41',
-        'image': 'https://picsum.photos/200/300?random=41',
-        'isActive': true,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 105,
-        'name': 'john doe51',
-        'image': 'https://picsum.photos/200/300?random=51',
-        'isActive': false,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 106,
-        'name': 'john doe61',
-        'image': 'https://picsum.photos/200/300?random=61',
-        'isActive': true,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 107,
-        'name': 'john doe71',
-        'image': 'https://picsum.photos/200/300?random=71',
-        'isActive': false,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 108,
-        'name': 'john doe81',
-        'image': 'https://picsum.photos/200/300?random=81',
-        'isActive': true,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      },
-      {
-        'id': 109,
-        'name': 'john doe91',
-        'image': 'https://picsum.photos/200/300?random=91',
-        'isActive': false,
-        'lastSeen': '2019-04-25T18:00:09.543Z'
-      }
+      } ...
     ];
 ``` 
 
@@ -256,11 +197,31 @@ export class Actions {
   payload: any | any[];
 }
 ```
+
+## NgxUiColumn
+| Name |    Type   |  Info |
+|---|---|---|
+|---|---|---|
+| field  | string  |  uniq field -  lowercase |   
+| name  | string  |  any string  |   
+| className  | string  | any css class, the class need to be a global in styles.css |  
+| template  | Object  |  htmlString or ngTemplate |   
+| sort  | string  |   'asc' | 'desc'  |   
+| hide  |  boolean |  default value is false  |   
+| isSelected  | boolean  | default value is false  |   
+| notSorted  |  boolean | default value is false  |   
+##
+## NgxUiColumn
+| Name |    Type   |  Info |
+|---|---|---|
+| tableHover |   boolean | default value is false  |  |
+| tableHover |   string | default value  is '600px'  |  |
 ## Events
 #### tableActions($event) 
 ` type: string;
    payload: any | any[];
-   `
+`
+####
 
 ## Credits
 `ngx-virtual-scroller` 
