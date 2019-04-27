@@ -1,0 +1,18 @@
+<div class="ngx-ui-table">
+  <input type="text" name="input" class="input"
+         [ngModel]="searchField"
+         (ngModelChange)="onInputChanged($event)" />
+
+  <ngx-ui-table
+    (tableActions)="tableActions($event)"
+    [tableData]="tableData"
+    [columns]="columns"
+    [tableOptions]="tableOptions"
+    [search]="searchField">
+  </ngx-ui-table>
+</div>
+
+<ng-template #titleTpl let-row="row" let-column="column">
+  <div class="title">{{row[column.field]}}</div>
+</ng-template>
+

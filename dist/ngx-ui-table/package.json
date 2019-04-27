@@ -1,0 +1,21 @@
+{
+  "name": "ngx-ui-table",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/ngx-ui-table.umd.js",
+  "module": "fesm5/ngx-ui-table.js",
+  "es2015": "fesm2015/ngx-ui-table.js",
+  "esm5": "esm5/ngx-ui-table.js",
+  "esm2015": "esm2015/ngx-ui-table.js",
+  "fesm5": "fesm5/ngx-ui-table.js",
+  "fesm2015": "fesm2015/ngx-ui-table.js",
+  "typings": "ngx-ui-table.d.ts",
+  "metadata": "ngx-ui-table.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

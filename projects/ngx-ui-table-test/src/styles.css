@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.author {
+  color: #2a7bff;
+}
+.year {
+  font-size: 14px;
+  font-weight: bold;
+}
+.cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.title {
+  color: #7070f6;
+  font-size: 14px;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
