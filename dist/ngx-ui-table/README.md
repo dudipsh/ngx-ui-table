@@ -1,6 +1,6 @@
 # NgxUiTable
 
-![](./chrome-capture.gif)
+![](chrome-capture.gif)
 
 
 ## Features
@@ -10,9 +10,9 @@ Handle large data sets ( Virtual Scroll )
 * Row Template or HTML as string
 
 ## Installation
-`ngx-virtual-scroller --save`
+`npm install ngx-virtual-scroller --save`
 
-`ng build ngx-ui-table --save`
+`npm install ngx-ui-table --save`
 
 
 ## Using
