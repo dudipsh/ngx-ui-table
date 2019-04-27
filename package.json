@@ -23,8 +23,12 @@
     "name": "Dudi Partush",
     "email": "dudipsh@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudipsh/ngx-ui-table"
+  },
   "license": "Apache-2.0",
-  "homepage": "",
+  "homepage": "https://github.com/dudipsh/ngx-ui-table",
   "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
