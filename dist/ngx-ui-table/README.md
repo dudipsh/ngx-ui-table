@@ -1,4 +1,6 @@
-# NgxUiTable
+# NgxUITable
+
+##### An angular2+ table with sortable headers, row selection, supported templates and dynamic html
 
 ![](chrome-capture.gif)
 
@@ -211,7 +213,7 @@ export class Actions {
 | isSelected  | boolean  | default value is false  |   
 | notSorted  |  boolean | default value is false  |   
 ##
-## NgxUiColumn
+## NgxUiTableOptions
 | Name |    Type   |  Info |
 |---|---|---|
 | tableHover |   boolean | default value is false  |  |

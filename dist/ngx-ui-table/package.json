@@ -1,6 +1,6 @@
 {
   "name": "ngx-ui-table",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
@@ -14,7 +14,9 @@
     "angular 7",
     "ngx-table",
     "ngx-table-ui",
-    "no bootstap table"
+    "no bootstap table",
+    "angular table",
+    "angular 7 table"
   ],
   "author": {
     "name": "Dudi Partush",
