@@ -1,0 +1,19 @@
+virtual-scroller {
+  width: 100%;
+  height: 95vh;
+}
+.sorting {
+  .asc, .desc {
+    width: 18px;
+  }
+  display: flex;
+  .asc:after{
+    content: ' \25B2';
+    color: lightgrey;
+  }
+  .desc:after{
+    content: ' \25BC';
+    color: lightgrey;
+  }
+}
+

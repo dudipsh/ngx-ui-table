@@ -1,0 +1,22 @@
+<div class="mdx-table-column-container {{col.className}}">
+  <div class="sorting" (click)="onSortChanged()" *ngIf="!col.notSorted">
+    <div class="{{col.sort}}"></div>
+    <div class="column-name" >
+      {{col.name}}
+    </div>
+  </div>
+  <div class="column-name" *ngIf="col.notSorted">
+    {{col.name}}
+  </div>
+  <div *ngIf="col.isHaveFilter" class="filter">
+    <ngx-ui-select-filter
+      (ngxUiSelectFilterActions)="onFilterChanged($event)"
+      [className]="'table-filters'"
+      [single]="false"
+      [name]="'name'"
+      [items]="filter"
+      [rowName]="'name'">
+    </ngx-ui-select-filter>
+  </div>
+
+</div>

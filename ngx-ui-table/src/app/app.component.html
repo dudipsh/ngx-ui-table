@@ -1,0 +1,23 @@
+
+
+<input type="text"
+       placeholder="Search...."
+       [(ngModel)]="data"
+       (ngModelChange)="onSearchChanged($event)">
+        <ngx-ui-table
+          (tableActions)="tableActions($event)"
+          [search]="search"
+          [tableData]="tableData"
+          [columns]="column"
+          [tableOptions]="tableOption">
+        </ngx-ui-table>
+
+
+<ng-template #idTpl let-row="row" let-column="column">
+  <p style="color:blue;">{{row[column.field]}}</p>
+</ng-template>
+
+
+<ng-template #imageTpl let-row="row" let-column="column">
+<img  src="https://via.placeholder.com/150" style="height: 80px;" />
+</ng-template>

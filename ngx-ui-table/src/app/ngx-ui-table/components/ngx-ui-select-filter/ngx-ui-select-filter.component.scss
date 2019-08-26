@@ -1,0 +1,250 @@
+.ui-dropdown-icon-container {
+  position: relative;
+}
+.arrow-down {
+  border: 1px solid;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  transform: rotate(45deg);
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.arrow-up {
+  border: 1px solid;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  transform: rotate(45deg);
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  background: linear-gradient(to bottom right, #fff 0%, #fff 50%, #1653ff 50%, #1653ff 100%);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  margin-top: 6px;
+}
+.ui-dropdown-icon {
+  min-height: 25px;
+  min-width: 56px;
+  cursor: pointer;
+  .ui-dropdown-header {
+    display: flex;
+    align-items: center;
+    .ui-name {
+      font-size: 11px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 0.5px;
+      color: #1653ff;
+      border-bottom: 1px #1653ff solid;
+      margin-left: 2px;
+    }
+  }
+}
+
+.ui-dropdown-dialog-container, .open {
+  position: absolute;
+  z-index: 100;
+  width: 276px;
+  height: 220px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  right: -17px;
+  margin-top: 12px;
+  .top-header {
+    border-top: 1px #1653ff solid;
+    .input-text {
+      display: flex;
+      border-bottom: 1px #f5f6fa solid;
+      height: 34px;
+      .input-search {
+        border: none !important;
+        margin: 1px 1px;
+        height: 32px;
+        width: 234px;
+        margin-left: 8px;
+      }
+      .icon-container {
+        position: absolute;
+        right: 0;
+        width: 37.5px;
+        height: 32px;
+        .search-light {
+          position: relative;
+          left: 17px;
+          top: -19px;
+        }
+      }
+    }
+  }
+  .middle-header {
+    border-bottom: 1px #f5f6fa solid;
+    height: 22px;
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 8px;
+      .left-col {
+        display: flex;
+        .selected {
+          padding-right: 8px;
+          height: 13px;
+          font-size: 11px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #abafbe;
+        }
+        .cnt {
+          margin-right: 12px;
+          height: 13px;
+          font-size: 11px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #abafbe;
+        }
+      }
+      .right-col {
+        cursor: pointer;
+        .reset-filter {
+          width: 31px;
+          height: 13px;
+          font-size: 11px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: 0.5px;
+          color: #c8d1da;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .item-list {
+    max-height: 220px;
+    overflow: auto;
+    overflow-y: scroll;
+    .item-row {
+      height: 20px;
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+      margin-top: 8px;
+      .ui-row {
+        border-bottom: 1px #f1f1f1 solid;
+        width: 100%;
+        cursor: pointer;
+      }
+      .ui-row:hover {
+        background: aliceblue;
+      }
+      .input-check-box {
+        width: 24px;
+        .input-label {
+          display: flex;
+        }
+      }
+      .item-name {
+        width: 210px;
+        max-width: 210px;
+        height: 13px;
+        font-size: 11px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+      }
+      .item-icon {
+      }
+    }
+    .item-row:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.checkmark2 {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: #eee;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark2 {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark2 {
+  //background-color: #2196F3;
+  box-shadow: inset 1px 1px 7px 0px #2196F3;
+  border: 0.5px #2196F3 solid;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark2:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark2:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark2:after {
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  background: #1653ff;
+}
+
+.checkbox {
+  position: relative;
+  right: 12px;
+  top: 8px;
+}
+
+virtual-scroller {
+  position: relative;
+  display: block;
+  width: 271px;
+  height: 304px;
+  min-height: 80px;
+  max-height: 304px;
+}
+
+.input-search::placeholder {
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #abafbe;
+}
+.table-filters {
+  .open {
+    right: unset !important;
+    left: 4px;
+  }
+}

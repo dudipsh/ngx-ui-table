@@ -1,0 +1,31 @@
+<div class="ui-dropdown-icon-container {{className}}">
+  <div class="close" (click)="close()">X</div>
+  <a class="ui-dropdown-icon" (click)="toggleDropdown()">
+    <div class="ui-dropdown-header">
+      <div class="ui-name" >{{name}}</div>
+      <div [ngClass]="(show) ? 'arrow-up' : 'arrow-down'"></div>
+    </div>
+  </a>
+  <div class="ui-dropdown-dialog-container open" *ngIf="show">
+    <div class="top-header">
+    </div>
+    <div class="item-list">
+      <div *ngFor="let item of itemsData">
+        <div class="item-row">
+          <p class="input-check-box">
+            <label class="input-label container">
+              <input type="checkbox"
+                     name="checkbox" class="checkbox"
+                     (click)="addOrRemove(item)"
+                     [checked]="item.isSelected"
+                     (change)="item.isSelected = !item.isSelected"/>
+            </label>
+          </p>
+          <div class="item-name">
+            {{item[rowName]}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

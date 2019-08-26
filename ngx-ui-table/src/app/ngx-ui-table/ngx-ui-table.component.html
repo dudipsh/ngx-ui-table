@@ -1,0 +1,56 @@
+<div class="ngx-ui-table-container" [ngStyle]="{'height': tableOptions?.tableHeight || '600px'}">
+  <virtual-scroller #scroll [items]="filteredTable">
+    <table  class="table" [ngClass]="(tableOptions?.tableHover) ? 'table-hover': ''">
+      <thead #header >
+      <tr class="table-header">
+        <th  class="tbl-xs">
+          <div class="checkbox-selected-all">
+            <checkbox [selectedType]="'all'"
+                      [item]="selectedAll"
+                      (checkBoxAction)="onSelectedAllChecked($event)">
+            </checkbox>
+          </div>
+        </th>
+        <th *ngFor="let column of  tableColumns | ngxUiColumnsPipe" >
+          <div class="sortable" *ngIf="!column.hide" [ngClass]="(column.className) ? column.className : 'tbl-md'">
+            <ngx-ui-table-column
+              (columnActions)="columnActions($event)"
+              [tableData]="tableDataCopy"
+              [column]="column">
+            </ngx-ui-table-column>
+          </div>
+        </th>
+      </tr>
+      </thead>
+      <tbody  #container>
+      <tr *ngFor="let row of  scroll.viewPortItems" class="ngx-ui-table-row">
+        <td class="tbl-xs">
+          <checkbox
+            [item]="row"
+            [selectedItems]="selectedItems"
+            (checkBoxAction)="onOneItemChecked($event)">
+          </checkbox>
+        </td>
+        <td *ngFor="let column of tableColumns  | ngxUiColumnsPipe"
+            (click)="onRowClicked($event, row)">
+          <div *ngIf="!column.hide">
+            <div *ngIf="hasTemplate(column); else defaultRow">
+              <div *ngIf="column.template.htmlString; else ngTemplate">
+                <dynamic-content [templateString]="column.template.htmlString(row, column)">
+                </dynamic-content>
+              </div>
+              <ng-template  #ngTemplate
+                            [ngTemplateOutlet]="column.template.ngTemplate"
+                            [ngTemplateOutletContext]="{row: row,column: column}">
+              </ng-template>
+            </div>
+            <ng-template #defaultRow>
+              <div>{{ row[column.field]}}</div>
+            </ng-template>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </virtual-scroller>
+</div>
